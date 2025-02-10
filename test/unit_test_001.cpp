@@ -39,8 +39,8 @@ unittest_teardown()
 
 unittest(constructors)
 {
-  //  select, clock, convert, busy, data0, data1
-  AD7367_SPI AD(5, 6, 7, 8, 9, 10);
+  //  select, convert, busy, SPI (optional)
+  AD7367_SPI AD(5, 6, 7);
 
   SPI.begin();
 
@@ -53,9 +53,9 @@ unittest(constructors)
 
 unittest(get_type)
 {
-  //  select, clock, convert, busy, data0, data1
-  AD7367 AD0(5, 6, 7, 8, 9, 10);
-  AD7366 AD1(5, 6, 7, 8, 9, 10);
+  //  select, convert, busy, SPI (optional)
+  AD7367_SPI AD0(5, 6, 7);
+  AD7366_SPI AD1(8, 9, 10);
 
   SPI.begin();
 
@@ -69,9 +69,9 @@ unittest(get_type)
 
 unittest(get_bits)
 {
-  //  select, clock, convert, busy, data0, data1
-  AD7367 AD0(5, 6, 7, 8, 9, 10);
-  AD7366 AD1(5, 6, 7, 8, 9, 10);
+  //  select, convert, busy, SPI (optional)
+  AD7367_SPI AD0(5, 6, 7);
+  AD7366_SPI AD1(8, 9, 10);
 
   SPI.begin();
 
